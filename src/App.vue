@@ -19,32 +19,41 @@
       <div class="control-next" @click="nextPage()" >Next</div>
     </div>
 
+    <loading :hasLoading="loader"/>
   </div>
 </template>
 
 <script>
 import box from './Box';
+import loading from './Loader';
 import axios from 'axios';
 export default {
   components: {
-    box
+    box,
+    loading
   },
+
   data() {
     return {
       animes: null,
-      page: 1
+      page: 1,
+      loader: false
     }
   },
+
   created(){
     this.getAnimes();
   },
+
   methods: {
     getAnimes() {
+      this.loader = true;
       axios
         .get(`https://api.jikan.moe/top/anime/${this.page}`)
         .then(response => response)
         .then(r => {
           this.animes = r.data.top;
+          this.loader = false;
         });
     },
     nextPage() {
@@ -68,11 +77,13 @@ export default {
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
   .animeRank li {
     list-style: none;
     margin: .5em 0;
   }
-    .control {
+
+  .control {
     width: 200px;
     margin: 10px auto;
     display: flex;
@@ -94,4 +105,5 @@ export default {
     cursor: pointer;
     transform: translateY(-5px);
   }
+
 </style>
