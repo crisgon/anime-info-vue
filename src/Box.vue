@@ -21,8 +21,7 @@ export default {
 
 <style scoped>
   .box {
-    width: 100%;
-    max-width: 450px;
+    width: 450px;
     height: 160px;
     display: flex;
     align-items: flex-start;
