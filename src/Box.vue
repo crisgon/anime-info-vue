@@ -23,9 +23,8 @@ export default {
   .box {
     width: 450px;
     height: 160px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr;
     box-sizing: border-box;
     padding: .5em;
     border-radius: 3px;
@@ -35,6 +34,9 @@ export default {
   }
 
   .info {
+    grid-column: 2/3;
+    box-sizing: border-box;
+    padding-left: .5em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -45,7 +47,7 @@ export default {
   }
 
   .podium {
-    margin-right: 20px;
+    grid-column: 3/4;
     height: 100%;
     display: flex;
     flex-direction: column;
