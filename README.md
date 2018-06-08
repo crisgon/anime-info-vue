@@ -1,6 +1,10 @@
-# animerank
+# Animerank
 
 > A Vue.js project
+
+> This project was made using the [Jikan Api](https://jikan.docs.apiary.io/)
+
+![Project Gif](https://i.imgur.com/HN57ZeZ.gif)
 
 ## Build Setup
 
