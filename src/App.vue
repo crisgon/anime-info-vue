@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <h1>AnimeRank</h1>
 
     <ul class="animeRank">
@@ -10,7 +9,9 @@
           :title="anime.title"
           :release="anime.airing_start"
           :rank="anime.rank"
-          :score="anime.score"/>
+          :score="anime.score"
+          :url="anime.url">
+          </box>
       </li>
     </ul>
 
@@ -56,6 +57,7 @@ export default {
           this.loader = false;
         });
     },
+
     nextPage() {
       this.page++;
       this.getAnimes();
@@ -70,6 +72,11 @@ export default {
 </script>
 
 <style>
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    color: #7A9CCF;
+  }
   .animeRank {
     width: 1000px;
     margin: 0 auto;
@@ -105,5 +112,4 @@ export default {
     cursor: pointer;
     transform: translateY(-5px);
   }
-
 </style>

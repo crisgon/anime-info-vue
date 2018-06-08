@@ -4,7 +4,7 @@
     <div class="info">
       <h3 class="info-title">{{ title }}</h3>
       <span class="info-airing">{{ release }}</span>
-      <button>More info</button>
+      <btn className="info" :linkTo="url">More Info</btn>
     </div>
     <div class="podium">
       <span class="podium-rank">{{ rank }}º</span>
@@ -14,15 +14,20 @@
 </template>
 
 <script>
+import btn from './Button';
 export default {
-  props: ['img', 'title', 'rank', 'score', 'release']
+  props: ['img', 'title', 'rank', 'score', 'release', 'url'],
+
+  components: {
+    btn
+  }
 }
 </script>
 
 <style scoped>
   .box {
     width: 450px;
-    height: 160px;
+    min-height: 160px;
     display: grid;
     grid-template-columns: 100px 2fr 1fr;
     box-sizing: border-box;
